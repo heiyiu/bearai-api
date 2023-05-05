@@ -12,5 +12,5 @@ docker pull ghcr.io/heiyiu/bearai-api:main
 ```
 For running the image in the background:
 ```
-docker run -e DISCORD_BOT_TOKEN=YOURTOKEN -d -it -p 8000:8000 ghcr.io/heiyiu/bearai-api:main
+docker run -d -it -p 8000:8000 ghcr.io/heiyiu/bearai-api:main
 ```
