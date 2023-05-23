@@ -1,6 +1,6 @@
 from typing import Union
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 app = FastAPI()
 
@@ -12,3 +12,8 @@ def read_root():
 @app.get('/health')
 def health_check():
     return {"status": "OK"}
+
+@app.get('/ip')
+def get_ip(request: Request):
+    client_host = request.client.host
+    return "Your ip address is {}".format(client_host)
