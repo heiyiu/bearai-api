@@ -1,9 +1,9 @@
 services:
   bearapi:
     # image: ghcr.io/heiyiu/bearai-api:main
-    build: app/
+    build: .
     ports:
-      - "8000:8000"
+      - "8000-8005:8000"
     networks: 
       - api
   nginx:
