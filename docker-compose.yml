@@ -1,0 +1,21 @@
+services:
+  bearapi:
+    # image: ghcr.io/heiyiu/bearai-api:main
+    build: app/
+    ports:
+      - "8000:8000"
+    networks: 
+      - api
+  nginx:
+    image: nginx:1.25.1
+    ports: 
+      - "8080:80"
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - bearapi
+    networks: 
+      - api
+networks:
+  api:
+  
